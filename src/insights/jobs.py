@@ -37,12 +37,3 @@ def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
         List of jobs with provided job_type
     """
     raise NotImplementedError
-
-
-def get_unique_industries(path: str) -> List[str]:
-    data_jobs = read(path)
-    unique_industries = set()
-    for job in data_jobs:
-        if job["industry"] != "":
-            unique_industries.add(job["industry"])
-    return unique_industries
