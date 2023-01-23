@@ -15,7 +15,8 @@ def get_unique_job_types(path: str) -> List[str]:
     data_jobs = read(path)
     unique_values = set()
     for job in data_jobs:
-        unique_values.add(job["job_type"])
+        if job["job_type"] != "":
+            unique_values.add(job["job_type"])
     return unique_values
     # raise NotImplementedError
 
